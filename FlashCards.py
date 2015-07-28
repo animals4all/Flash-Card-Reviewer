@@ -1,6 +1,6 @@
 #! python3
 
-import sys, os, random
+import sys, os
 
 '''
 Flash card file format:
