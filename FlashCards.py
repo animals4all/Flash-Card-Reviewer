@@ -156,10 +156,6 @@ def cardReview(cardDecks, fileName):
 
 
 def makeChangesToDecks(cardsToAdd, cardsToRemove, reviewedDeck, unreviewedDeck):
-	print(cardsToAdd)
-	print(cardsToRemove)
-	print(reviewedDeck)
-	print(unreviewedDeck)
 	# Make the changes to the decks
 	for cardFront, cardBack in cardsToAdd.items():
 		# Transfer cards from reviewed deck to unreviewed deck
