@@ -1,6 +1,6 @@
 #! python3
 
-import sys, os
+import sys, os, random
 
 '''
 Flash card file format:
@@ -137,9 +137,9 @@ def cardReview(cardDecks, fileName):
 						print("That card could not be found.")
 
 			elif command[0].lower() in ("q", "quit"):
-				ans = input("Are you sure you want to quit? Any changes you made to the deck won't be saved! (y/n): ")
-				if ans.strip().lower() in ("y", "yes"):
-					sys.exit()
+				reviewedDeck, unreviewedDeck = makeChangesToDecks(cardsToAdd, cardsToRemove, reviewedDeck, unreviewedDeck)
+				writeChangesToFile(fileName, reviewedDeck, unreviewedDeck)
+				sys.exit()
 			elif command[0].lower() in ("h", "help"):
 				help("cardReview")
 			else:
